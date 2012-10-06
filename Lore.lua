@@ -33,7 +33,7 @@ local GetAchievementCriteriaInfo = GetAchievementCriteriaInfo
 
 local function setupLandmarkIcon(left, right, top, bottom)
     return {
-        icon = texture or [[Interface\Minimap\POIIcons]],
+        icon = [[Interface\Minimap\POIIcons]],
         tCoordLeft = left,
         tCoordRight = right,
         tCoordTop = top,
