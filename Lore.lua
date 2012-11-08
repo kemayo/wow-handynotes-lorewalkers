@@ -31,29 +31,38 @@ local GetAchievementCriteriaInfo = GetAchievementCriteriaInfo
 ---------------------------------------------------------
 -- Constants
 
-local function setupLandmarkIcon(left, right, top, bottom)
-    return {
-        icon = [[Interface\Minimap\POIIcons]],
-        tCoordLeft = left,
-        tCoordRight = right,
-        tCoordTop = top,
-        tCoordBottom = bottom,
-    }
-end
+local get_icon
+do
+    local icons, backup_icon
 
-local backup_icon = setupLandmarkIcon(GetPOITextureCoords(111)) -- fallback
-local achievement_icons = {
-    [6856] = setupLandmarkIcon(GetPOITextureCoords(111)), -- Ballad of Liu Lang
-    [6716] = setupLandmarkIcon(GetPOITextureCoords(112)), -- Between a Saurok and a Hard Place
-    [6846] = setupLandmarkIcon(GetPOITextureCoords(113)), -- Fish Tails
-    [6857] = setupLandmarkIcon(GetPOITextureCoords(114)), -- Heart of the Mantid Swarm
-    [6850] = setupLandmarkIcon(GetPOITextureCoords(115)), -- Hozen in the Mist
-    [7230] = setupLandmarkIcon(GetPOITextureCoords(116)), -- Legend of the Brewfathers
-    [6754] = setupLandmarkIcon(GetPOITextureCoords(117)), -- The Dark Heart of the Mogu
-    [6855] = setupLandmarkIcon(GetPOITextureCoords(118)), -- The Seven Burdens of Shaohao
-    [6847] = setupLandmarkIcon(GetPOITextureCoords(119)), -- The Song of the Yaungol
-    [6858] = setupLandmarkIcon(GetPOITextureCoords(120)), -- What is Worth Fighting For
-}
+    get_icon = function(achievement)
+        if not icons then
+            local function setupLandmarkIcon(left, right, top, bottom)
+                return {
+                    icon = [[Interface\Minimap\POIIcons]],
+                    tCoordLeft = left,
+                    tCoordRight = right,
+                    tCoordTop = top,
+                    tCoordBottom = bottom,
+                }
+            end
+            icons = {
+                [6856] = setupLandmarkIcon(GetPOITextureCoords(111)), -- Ballad of Liu Lang
+                [6716] = setupLandmarkIcon(GetPOITextureCoords(112)), -- Between a Saurok and a Hard Place
+                [6846] = setupLandmarkIcon(GetPOITextureCoords(113)), -- Fish Tails
+                [6857] = setupLandmarkIcon(GetPOITextureCoords(114)), -- Heart of the Mantid Swarm
+                [6850] = setupLandmarkIcon(GetPOITextureCoords(115)), -- Hozen in the Mist
+                [7230] = setupLandmarkIcon(GetPOITextureCoords(116)), -- Legend of the Brewfathers
+                [6754] = setupLandmarkIcon(GetPOITextureCoords(117)), -- The Dark Heart of the Mogu
+                [6855] = setupLandmarkIcon(GetPOITextureCoords(118)), -- The Seven Burdens of Shaohao
+                [6847] = setupLandmarkIcon(GetPOITextureCoords(119)), -- The Song of the Yaungol
+                [6858] = setupLandmarkIcon(GetPOITextureCoords(120)), -- What is Worth Fighting For
+            }
+            backup_icon = setupLandmarkIcon(GetPOITextureCoords(111)) -- fallback
+        end
+        return icons[achievement] or backup_icon
+    end
+end
 
 local points = {
     -- [mapfile] = { [coord] = { [achievement_id], [criteria_index] } }
@@ -226,7 +235,7 @@ do
         local state, value = next(t, prestate)
         while state do -- Have we reached the end of this zone?
             if value and (db.completed or not select(3, GetAchievementCriteriaInfo(value[1], value[2]))) then
-                local icon = achievement_icons[value[1]] or backup_icon
+                local icon = get_icon(value[1])
                 Debug("iter step", state, icon, db.icon_scale, db.icon_alpha)
                 return state, nil, icon, db.icon_scale, db.icon_alpha
             end
