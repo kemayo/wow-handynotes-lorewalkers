@@ -129,6 +129,7 @@ local points = {
 }
 
 local info_from_coord = function(mapFile, coord)
+    mapFile = string.gsub(mapFile, "_terrain%d+$", "")
     local point = points[mapFile] and points[mapFile][coord]
     if point then
         local _, achievement = GetAchievementInfo(point[1])
@@ -213,7 +214,7 @@ do
 
     function HLHandler:OnClick(button, down, mapFile, coord)
         if button == "RightButton" and not down then
-            currentZone = mapFile
+            currentZone = string.gsub(mapFile, "_terrain%d+$", "")
             currentCoord = coord
             ToggleDropDownMenu(1, nil, HL_Dropdown, self, 0, 0)
         end
@@ -244,6 +245,7 @@ do
         return nil, nil, nil, nil
     end
     function HLHandler:GetNodes(mapFile)
+        mapFile = string.gsub(mapFile, "_terrain%d+$", "")
         return iter, points[mapFile], nil
     end
 end
