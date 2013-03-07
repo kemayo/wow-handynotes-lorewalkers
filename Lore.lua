@@ -57,9 +57,9 @@ do
                 [6855] = setupLandmarkIcon(GetPOITextureCoords(118)), -- The Seven Burdens of Shaohao
                 [6847] = setupLandmarkIcon(GetPOITextureCoords(119)), -- The Song of the Yaungol
                 [6858] = setupLandmarkIcon(GetPOITextureCoords(120)), -- What is Worth Fighting For
-                [8049] = setupLandmarkIcon(GetPOITextureCoords(111)), -- Zandalari Prophecy
-                [8050] = setupLandmarkIcon(GetPOITextureCoords(112)), -- Rumbles of Thunder
-                [8051] = setupLandmarkIcon(GetPOITextureCoords(113)), -- Gods and Monsters
+                [8049] = setupLandmarkIcon(GetPOITextureCoords(112)), -- Zandalari Prophecy
+                [8050] = setupLandmarkIcon(GetPOITextureCoords(113)), -- Rumbles of Thunder
+                [8051] = setupLandmarkIcon(GetPOITextureCoords(114)), -- Gods and Monsters
             }
             backup_icon = setupLandmarkIcon(GetPOITextureCoords(111)) -- fallback
         end
