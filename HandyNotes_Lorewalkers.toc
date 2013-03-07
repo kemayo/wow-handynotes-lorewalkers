@@ -1,4 +1,4 @@
-## Interface: 50100
+## Interface: 50200
 ## Title: HandyNotes_Lorewalkers
 ## Notes: Where the lore is at
 ## Author: Kemayo

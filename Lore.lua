@@ -57,6 +57,9 @@ do
                 [6855] = setupLandmarkIcon(GetPOITextureCoords(118)), -- The Seven Burdens of Shaohao
                 [6847] = setupLandmarkIcon(GetPOITextureCoords(119)), -- The Song of the Yaungol
                 [6858] = setupLandmarkIcon(GetPOITextureCoords(120)), -- What is Worth Fighting For
+                [8049] = setupLandmarkIcon(GetPOITextureCoords(111)), -- Zandalari Prophecy
+                [8050] = setupLandmarkIcon(GetPOITextureCoords(112)), -- Rumbles of Thunder
+                [8051] = setupLandmarkIcon(GetPOITextureCoords(113)), -- Gods and Monsters
             }
             backup_icon = setupLandmarkIcon(GetPOITextureCoords(111)) -- fallback
         end
@@ -125,6 +128,20 @@ local points = {
         [37303012] = {7230, 2}, -- Legend of the Brewfathers, Xin Wo Yin the Broken Hearted
         [66018756] = {6846, 1}, -- Fish Tails, Watersmithing
         [55885685] = {6855, 3}, -- The Seven Burdens of Shaohao, The Emperor's Burden - Part 3
+    },
+    ["IsleoftheThunderKing"] = {
+        [35107010] = {8049, 1}, -- Zandalari Prophecy, Coming of Age
+        [68704580] = {8049, 2}, -- Zandalari Prophecy, For Council and King
+        [36307040] = {8049, 3}, -- Zandalari Prophecy, Shadows of the Loa
+        [52604140] = {8049, 4}, -- Zandalari Prophecy, The Dark Prophet Zul
+        [40204060] = {8050, 1}, -- Rumbles of Thunder, Lei Shen
+        [47005990] = {8050, 2}, -- Rumbles of Thunder, The Sacred Mount
+        [34906560] = {8050, 3}, -- Rumbles of Thunder, Unity at a Price
+        [60706880] = {8050, 4}, -- Rumbles of Thunder, The Pandaren Problem
+        [35805470] = {8051, 1}, -- Gods and Monsters, Agents of Order
+        [59202630] = {8051, 2}, -- Gods and Monsters, Shadow, Storm, and Stone
+        [49902040] = {8051, 3}, -- Gods and Monsters, The Curse and the Silence
+        [62503770] = {8051, 4}, -- Gods and Monsters, Age of a Hundred Kings
     },
 }
 
