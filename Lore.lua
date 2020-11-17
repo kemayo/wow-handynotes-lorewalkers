@@ -104,13 +104,13 @@ local points = {
         [59905470] = {6857, 2}, -- Heart of the Mantid Swarm, Mantid Society
     },
     [418] = { -- Krasarang Wilds
-        [50943169] = {6754, 2}, -- The Dark Heart of the Mogu, The Lost Dynasty
-        [32782941] = {6716, 4}, -- Between a Saurok and a Hard Place, The Last Stand
-        [40505662] = {6855, 4}, -- The Seven Burdens of Shaohao, The Emperor's Burden - Part 4
-        [52398766] = {6850, 2}, -- Hozen in the Mist, Hozen Maturiy
-        [30553857] = {6846, 3}, -- Fish Tails, Origins
-        [72213101] = {6856, 4}, -- Ballad of Liu Lang, Waiting for the Turtle
-        [81431145] = {7230, 1}, -- Legend of the Brewfathers, Quan Tou Kou the Two Fisted
+        [52962742] = {6754, 2}, -- The Dark Heart of the Mogu, The Lost Dynasty
+        [33402500] = {6716, 4}, -- Between a Saurok and a Hard Place, The Last Stand
+        [41705420] = {6855, 4}, -- The Seven Burdens of Shaohao, The Emperor's Burden - Part 4
+        [54508770] = {6850, 2}, -- Hozen in the Mist, Hozen Maturiy
+        [31003480] = {6846, 3}, -- Fish Tails, Origins
+        [75812668] = {6856, 4}, -- Ballad of Liu Lang, Waiting for the Turtle
+        [85600560] = {7230, 1}, -- Legend of the Brewfathers, Quan Tou Kou the Two Fisted
     },
     [390] = { -- Vale of Eternal Blossoms
         [26622149] = {6858, 4}, -- What is Worth Fighting For, Together, We Are Strong
