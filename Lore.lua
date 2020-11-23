@@ -203,7 +203,7 @@ do
             info.notCheckable = 1
             UIDropDownMenu_AddButton(info, level)
 
-            if TomTom or Cartographer_Waypoints then
+            if TomTom then
                 -- Waypoint menu item
                 info.disabled     = nil
                 info.isTitle      = nil
@@ -242,12 +242,21 @@ function HLHandler:OnLeave(uiMapId, coord)
 end
 
 do
+    local function should_show(achievement, criteria)
+        if db.completed then return true end
+        if GetAchievementNumCriteria(achievement) >= criteria then
+            return not select(3, GetAchievementCriteriaInfo(achievement, criteria))
+        end
+        -- this implies that we didn't load the data from the server completely... so default to showing it,
+        -- and later updates will hopefully fix it
+        return true
+    end
     -- This is a custom iterator we use to iterate over every node in a given zone
     local function iter(t, prestate)
         if not t then return nil end
         local state, value = next(t, prestate)
         while state do -- Have we reached the end of this zone?
-            if value and (db.completed or not select(3, GetAchievementCriteriaInfo(value[1], value[2]))) then
+            if value and should_show(value[1], value[2]) then
                 local icon = get_icon(value[1])
                 Debug("iter step", state, icon, db.icon_scale, db.icon_alpha)
                 return state, nil, icon, db.icon_scale, db.icon_alpha
