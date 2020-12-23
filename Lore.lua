@@ -126,7 +126,7 @@ local points = {
         [42261747] = {6754, 3}, -- The Dark Heart of the Mogu, Spirit Binders
         [37303012] = {7230, 2}, -- Legend of the Brewfathers, Xin Wo Yin the Broken Hearted
         [66018756] = {6846, 1}, -- Fish Tails, Watersmithing
-        [55885685] = {6855, 2}, -- The Seven Burdens of Shaohao, The Emperor's Burden - Part 3
+        [55885685] = {6855, 3}, -- The Seven Burdens of Shaohao, The Emperor's Burden - Part 3
     },
     [504] = { -- Isle of the Thunder King
         [35107010] = {8049, 1}, -- Zandalari Prophecy, Coming of Age
@@ -231,6 +231,7 @@ do
 
     function HLHandler:OnClick(button, down, uiMapId, coord)
         if button == "RightButton" and not down then
+            currentZone = uiMapId
             currentCoord = coord
             ToggleDropDownMenu(1, nil, HL_Dropdown, self, 0, 0)
         end
