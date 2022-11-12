@@ -34,6 +34,8 @@ local get_icon
 do
     local icons, backup_icon
 
+    local GetPOITextureCoords = _G.GetPOITextureCoords or C_Minimap.GetPOITextureCoords
+
     get_icon = function(achievement)
         if not icons then
             local function setupLandmarkIcon(left, right, top, bottom)
