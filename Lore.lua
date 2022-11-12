@@ -1,12 +1,19 @@
 ---------------------------------------------------------
 -- Addon declaration
-HandyNotes_Lorewalkers = LibStub("AceAddon-3.0"):NewAddon("HandyNotes_Lorewalkers","AceEvent-3.0")
+HandyNotes_Lorewalkers = LibStub("AceAddon-3.0"):NewAddon("HandyNotes_Lorewalkers","AceEvent-3.0","AceConsole-3.0")
 local HL = HandyNotes_Lorewalkers
 local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
 -- local L = LibStub("AceLocale-3.0"):GetLocale("HandyNotes_Lorewalkers", true)
 
 local debugf = tekDebug and tekDebug:GetFrame("Lorewalkers")
 local function Debug(...) if debugf then debugf:AddMessage(string.join(", ", tostringall(...))) end end
+
+if IsAddOnLoaded("HandyNotes_MistsOfPandariaTreasures") then
+    HL:Print("has been replaced by HandyNotes_MistsOfPandariaTreasures and can be removed")
+    do return end
+else
+    HL:Print("has been replaced by HandyNotes_MistsOfPandariaTreasures, which you should go download instead")
+end
 
 ---------------------------------------------------------
 -- Our db upvalue and db defaults

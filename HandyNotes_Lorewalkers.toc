@@ -9,5 +9,6 @@
 ## X-Curse-Project-ID: 45566
 ## SavedVariables: HandyNotes_LorewalkersDB
 ## RequiredDeps: HandyNotes
+## OptionalDeps: HandyNotes_MistsOfPandariaTreasures
 
 Lore.lua
