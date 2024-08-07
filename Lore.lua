@@ -8,7 +8,7 @@ local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
 local debugf = tekDebug and tekDebug:GetFrame("Lorewalkers")
 local function Debug(...) if debugf then debugf:AddMessage(string.join(", ", tostringall(...))) end end
 
-if IsAddOnLoaded("HandyNotes_MistsOfPandariaTreasures") then
+if C_AddOns.IsAddOnLoaded("HandyNotes_MistsOfPandariaTreasures") then
     HL:Print("has been replaced by HandyNotes_MistsOfPandariaTreasures and can be removed")
     do return end
 else
